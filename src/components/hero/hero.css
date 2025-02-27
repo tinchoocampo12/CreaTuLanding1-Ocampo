@@ -1,0 +1,77 @@
+.nc-hero {
+  color: #fefefe;
+  gap: 2rem;
+  padding-top: 100px;
+}
+
+.nc-intro p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  max-width: 550px;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+.nc-card {
+  margin-top: 30px;
+  gap: 3rem;
+}
+
+.image {
+  width: 310px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+.card {
+  width: 310px;
+  gap: 1rem;
+}
+
+.nc-card h1 {
+  font-size: 30px;
+}
+.nc-card h3 {
+  font-size: 22px;
+}
+
+.card-btn {
+  background-color: transparent;
+  border-radius: 10px;
+  border-style: none;
+  border: solid 2px #f7f7f7;
+  padding: 15px;
+  font-size: 20px;
+  color: #fefefe;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.card-btn:hover {
+  background-color: #f7f7f756;
+  transition: 0.2s ease-in;
+}
+.card-desc {
+  width: 100%;
+}
+
+.card-desc span {
+  line-height: 24px;
+}
+
+a {
+  color: #fefefe;
+  margin-top: 20px;
+}
