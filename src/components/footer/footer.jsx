@@ -1,5 +1,4 @@
 import "./footer.css";
-import "../globals.css";
 import footerLogo from "../../assets/images/nc-footer-logo.png";
 const Footer = () => {
   return (

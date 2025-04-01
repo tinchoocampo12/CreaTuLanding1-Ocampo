@@ -1,9 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "./navbar.css";
-import "../globals.css";
-import logo from "../../assets/images/nc-footer-logo.png";
+import logo from "../../assets/images/nc-navbar.png";
+import shopLogo from "../../assets/images/escudo_bolso.png";
+import CartWidget from "../CartWidget/CartWidget";
+import data from "../../data/data.json";
+import { useCart } from "../../context/CartContext";
+
 const Navbar = () => {
+  const categoriasUnicas = [...new Set(data.map((p) => p.category))];
+  const [shopping, setShopping] = useState(false);
+  const location = useLocation();
+  const logoSrc = location.pathname != "/" ? shopLogo : logo;
+  const { cart, removeFromCart } = useCart();
+
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [showCartDetails, setShowCartDetails] = useState(false);
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -17,62 +29,113 @@ const Navbar = () => {
     }, 200);
   };
 
+  const toggleCartDetails = () => {
+    setShowCartDetails((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleShopping = () => {
+      setShopping(location.pathname !== "/");
+    };
+
+    window.addEventListener("shopping", handleShopping);
+    handleShopping();
+
+    return () => {
+      window.removeEventListener("shopping", handleShopping);
+    };
+  }, []);
+
   return (
-    <div className="nc-navbar absolute wdth-100 p-color flex sp-btw">
-      <div className="nc-logo logo-text flex align-center">
-        <img className="logo" src={logo} alt="Nacional-Logo" />
-        <p>Nacionalizate</p>
-      </div>
-      <div className="flex align-center">
-        <ul className="links flex align-center justify-center gap-6">
+    <>
+      <div
+        className={`flex align-center wdth-100 sp-btw fixed navbar ${
+          shopping ? "shopping" : ""
+        }`}
+      >
+        <div className="shopping-logo">
+          <img className="navbar-logo" src={logoSrc} alt="nacional-logo" />
+          <p>Nacionalistas</p>
+        </div>
+
+        <ul className="landing-navbar justify-center">
           <li>
-            <span className="relink link">Inicio</span>
+            <NavLink className="navlink" to="/">
+              Inicio
+            </NavLink>
           </li>
           <li>
-            <span className="relink link">Productos</span>
+            <NavLink className="navlink" to="/shop">
+              Tienda
+            </NavLink>
           </li>
           <li
             className="dropdown"
-            onMouseEnter={() => setDropdownVisible(true)}
-            onMouseLeave={() => setDropdownVisible(false)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            <span ClassName="relink navbar-text link">Categorias</span>
+            <span className="links categories">Productos</span>
             <ul className={`dropdown-menu ${isDropdownVisible ? "show" : ""}`}>
-              <li>
-                <a className="navbar-text" href="#">
-                  Camisetas
-                </a>
-              </li>
-              <li>
-                <a className="navbar-text" href="#">
-                  Shorts
-                </a>
-              </li>
-              <li>
-                <a className="navbar-text" href="#">
-                  Accesorios
-                </a>
-              </li>
+              {categoriasUnicas.map((cat) => (
+                <li key={cat}>
+                  <NavLink to={`/shop/category/${cat.toLowerCase()}`}>
+                    {cat}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </li>
-          <li>
-            <span className="relink navbar-text link">Socios</span>
-          </li>
-          <li>
-            <span className="relink navbar-text link">Contacto</span>
-          </li>
+
+          <div
+            className="icons flex align-end justify-center text-size"
+            style={{ position: "relative" }}
+          >
+            <div
+              onClick={toggleCartDetails}
+              className="cart-icon-wrapper"
+              style={{ position: "relative", cursor: "pointer" }}
+            >
+              <CartWidget />
+              {cart.length > 0 && (
+                <span className="cart-count">{cart.length}</span>
+              )}
+            </div>
+
+            {showCartDetails && cart.length > 0 && (
+              <div className="cart-dropdown-detailed">
+                {cart.map((item, idx) => (
+                  <div key={idx} className="cart-item">
+                    <img
+                      src={item.image}
+                      alt={item.name || item.title}
+                      className="cart-item-img"
+                    />
+                    <div className="cart-item-info">
+                      <NavLink
+                        to={`/shop/item/${item.id}`}
+                        className="cart-item-link"
+                      >
+                        <strong>{item.name || item.title}</strong>
+                      </NavLink>
+                      <div className="cart-item-size">Talle {item.size}</div>
+                      <div className="cart-item-qty-price">
+                        x{item.quantity} — ${item.price.toLocaleString()}
+                        <button
+                          onClick={() => removeFromCart(item.id, item.size)}
+                          className="cart-remove"
+                        >
+                          <i className="remove bi bi-trash-fill"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </ul>
       </div>
-      <div className="btn flex align-center">
-        <div className="container-icons">
-          <i class="flex relink bi bi-bag-dash"></i>
-          <div className="count-products">
-            <span className="s-color">0</span>
-          </div>
-        </div>
-        <i className="relink bi bi-box-arrow-up-right"></i>
-      </div>
-    </div>
+    </>
   );
 };
 
