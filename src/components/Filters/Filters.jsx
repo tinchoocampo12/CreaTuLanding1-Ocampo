@@ -1,5 +1,5 @@
 import data from "../../data/data.json";
-import "./filters.css";
+import "./Filters.css";
 
 const Filters = ({ filters, onFilterChange, resetAll }) => {
   const categoriasUnicas = [...new Set(data.map((item) => item.category))];

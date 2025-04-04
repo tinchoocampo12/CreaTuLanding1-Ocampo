@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import "./navbar.css";
+import "./NavBar.css";
 import logo from "../../assets/images/nc-navbar.png";
 import shopLogo from "../../assets/images/escudo_bolso.png";
 import CartWidget from "../CartWidget/CartWidget";

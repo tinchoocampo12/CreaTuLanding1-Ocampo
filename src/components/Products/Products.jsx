@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./products.css";
+import "./Products.css";
 import banner from "../../assets/images/banner-1920-3.webp";
 import data from "../../data/data.json";
-import Navbar from "../NavBar/NavBar";
+import Navbar from "../NavBar/NavBar.jsx";
 import Filters from "../Filters/Filters";
 import Options from "../Filters/Options";
 import Prods from "../Prods/Prods";

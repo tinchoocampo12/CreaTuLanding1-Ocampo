@@ -1,4 +1,4 @@
-import "./filters.css";
+import "./Filters.css";
 
 const Options = ({ orden, setOrden }) => {
   return (

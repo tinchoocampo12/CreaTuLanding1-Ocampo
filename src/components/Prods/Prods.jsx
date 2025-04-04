@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./prods.css";
+import "./Prods.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { useCart } from "../../context/CartContext";
 
