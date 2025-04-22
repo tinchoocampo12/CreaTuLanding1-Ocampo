@@ -1,0 +1,58 @@
+.nc-hero {
+  color: #fefefe;
+  gap: 2rem;
+}
+
+.nc-intro p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  max-width: 550px;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+.nc-card {
+  margin-top: 30px;
+  gap: 3rem;
+}
+
+.image {
+  background-size: auto;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+a {
+  color: #fefefe;
+  margin-top: 20px;
+}
+
+.title-hero {
+  font-size: 70px;
+  font-weight: 500;
+  max-width: 700px;
+  text-shadow: 6px 3px 10px rgba(12, 14, 47, 0.3);
+}
+
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 150px 0 0 150px;
+}
+
+.hero-intro p {
+  font-size: 28px;
+  font-weight: 300;
+}

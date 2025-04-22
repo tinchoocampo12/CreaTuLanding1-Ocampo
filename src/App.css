@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.sep {
+  height: 1px;
+  background-color: #ccc;
+  width: 100%;
+}
+
+.navlink {
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #2c337d;
+  --secondary-color: #fff;
+  --border-modals: solid 1px #2c337d;
+  --navbart-text: 17px;
+  --footer-text: 14px;
+  --gradient-text: linear-gradient(to bottom, #273077cf, #273177);
+}
+
+.p-color {
+  color: var(--primary-color);
+}
+
+.s-color {
+  color: var(--secondary-color);
+}
+
+.border {
+  border: solid 1px var(--primary-color);
+}
+
+.nv-links-size {
+  font-size: var(--navbart-text);
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.sp-btw {
+  justify-content: space-between;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.title-size {
+  font-size: 4rem;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost";
+}
+
+.footer-text {
+  font-size: var(--footer-text);
+}
+
+.navbar-text {
+  font-size: var(--navbart-text);
+}
+
+.wdth-100 {
+  width: 100%;
+}
+
+.mx-wdth-100 {
+  max-width: 100%;
+}
+
+.logo-text {
+  font-size: 25px;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.border-none {
+  border-style: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.relink {
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.btn {
+  gap: 0.5rem;
+  font-size: 17px;
+}
+
+.sep {
+  height: 1px;
+  background-color: #ccc;
+  width: 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.text-size {
+  font-size: 17px;
+}
+
+li {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cover {
+  background-size: cover;
+}
+
+.p-center {
+  background-position: center center;
+}

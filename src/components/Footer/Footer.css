@@ -1,0 +1,30 @@
+footer {
+  background-color: #e8e8e8;
+  padding: 20px 30px;
+}
+
+.footer-logo {
+  width: 40px;
+}
+
+.nc-footer-info {
+  gap: 1rem;
+}
+
+.nc-footer-info p {
+  color: #343b71;
+  font-weight: 600;
+}
+
+.footer-links a {
+  color: #343b71;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-links span {
+  font-weight: 600;
+  text-decoration: none;
+  padding-left: 8px;
+  padding-right: 8px;
+}

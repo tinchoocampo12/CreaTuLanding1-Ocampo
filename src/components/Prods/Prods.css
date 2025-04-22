@@ -1,0 +1,41 @@
+.bp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart i {
+  color: #002f87;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.added {
+  display: none;
+}
+
+.size-button.selected {
+  background-color: #002f87;
+  color: white;
+}
+
+.added.bi-handbag-fill {
+  font-size: 24px;
+  color: gray;
+  transition: color 0.3s;
+}
+
+.added.bi-handbag-fill.active {
+  color: green;
+}
+
+.add-to-cart-btn {
+  background-color: transparent;
+  border-style: none;
+}
+
+.sin-stock {
+  color: #be0c30;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
