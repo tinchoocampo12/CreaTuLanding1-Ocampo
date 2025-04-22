@@ -13,7 +13,7 @@ import {
 import { db } from "../../firebase/firebaseConfig";
 import "./Cart.css";
 import NavBar from "../NavBar/NavBar";
-import Footer from "../footer/Footer";
+import Footer from "../Footer/Footer";
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useCart();
