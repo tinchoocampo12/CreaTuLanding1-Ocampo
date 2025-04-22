@@ -35,8 +35,8 @@ Este es un proyecto de e-commerce desarrollado como entrega final del curso de R
 
 1. **Cloná el repositorio**
    ```bash
-   git clone https://github.com/tuusuario/ProyectoFinal-Ocampo.git
-   cd ProyectoFinal-Ocampo
+   git clone https://github.com/tinchoocampo12/E-Commerce-React
+   cd E-Commerce-React
    npm install
    npm run dev
    ```
